@@ -34,8 +34,7 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
     var cornerRad: CGFloat = 5.0
     
     
-    var testMessage: String?
-    
+ 
     
     
    
@@ -87,15 +86,7 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     var arrayOrderStruct = [structOrder] ()
-    
-    
-    
-    
-    
-    
-    
-    
-    //var orders = [Order]()
+        //var orders = [Order]()
     var orders = [Order_Class()]
     var activeDrivers = [String]()
     var markers = [Marker]()
@@ -103,7 +94,7 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
     var MAP_SPAN: Double?
 
     
-    
+  
 
     
     override func viewDidLoad() {
@@ -132,17 +123,12 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
         markers.append(driverMarker2)
         
         setMap()
-        
         setActiveDrivers()
-       
-        
-        
-        var orderInfo = structOrder()
-        
-        
         //populate orderInfo structure with values to mimick data received from server
+       
         for counter in 1...20
         {
+             var orderInfo = structOrder()
             orderInfo.CustName = "Customer # \(counter)"
             orderInfo.CustPhone = "123-22-33-3\(counter)"
             orderInfo.DType = "Delivery"
@@ -150,38 +136,43 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
             orderInfo.DriverAssigned = "Driver # \(counter)"
             
             
-            orderInfo.OrderType = "New"
+            //orderInfo.OrderType = "New"
             
             // make 5 orders of each type in the list
-            /*
+            
             if counter <= 5
             {
-                orderInfo.OrderType = "New"
+                orderInfo.OrderType = "Future"
             
             }
             else if counter <= 10
             {
-                orderInfo.OrderType = "Out"
+                orderInfo.OrderType = "Complete"
             }
             else if counter <= 15
             {
-                orderInfo.OrderType = "Complete"
+                orderInfo.OrderType = "Out"
                 
             }
-            else
+            else if counter <= 20
             {
-                orderInfo.OrderType = "Future"
+                orderInfo.OrderType = "New"
             }
- */
+ 
             
             arrayOrderStruct.append(orderInfo)
+           
         }
         
+        /*
+        for eachOrderStructure in arrayOrderStruct
+        {
+            print (eachOrderStructure.CustName)
+        
+        }*/
         
         //populate array of order objects with data from structure
         setOrders(oInfo: arrayOrderStruct)
-
-        
         // set up dictionary of buttons and corresponding views to handle visibility on button click
         btnVCCollection[btnNewOrders] = vcNew
         btnVCCollection[btnComplete] = vcComplete
@@ -198,7 +189,7 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
 
         btnNewOrders.backgroundColor = hexStringToUIColor(hexString: "ea0e89")
         btnNewOrders.setTitleColor(hexStringToUIColor(hexString: "ffffff"), for: UIControlState.normal)
-
+        
         btnNewOrders.setTitle("New (\(orders.count))", for: UIControlState.normal)
 
     }
@@ -208,37 +199,38 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     let blankCell = UITableViewCell()
     let index: Int = indexPath.row
-    let orderRecord = orders [index]
-    
+     let orderRecord = orders [index]
     //populate table in New tab
     if tableView == newTabTable {
+       
       let  cell = Bundle.main.loadNibNamed("newOrderCell", owner: self, options: nil)?.first as! newOrderCell
-        //if orderRecord.getOrderType() == "New"
-            //{
       
-                    cell.lblCustName.text =  orderRecord.customer.getCustName()
+        if orderRecord.getOrderType() == "New"
+            {
+           
+                cell.lblCustName.text = orderRecord.customer.getCustName()
+               //print (orders[index].customer.getCustName())
                 cell.lblCustPhone.text = orderRecord.customer.getCustPhone()
                 cell.lblTime.text = "n/a "
                 cell.lblDiningType.text = orderRecord.getDType()
                 cell.lblZone.text = String (orderRecord.getZone())
                 cell.lblDriverAssigned.text = orderRecord.driverAssigned.getDriverName()
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
+               
     
-            //}
-        return cell
-        }
+            }
+       return cell
+      
+    }
     
     //populate table in out tab
     else if tableView == outTabTable
         {
                 let  cell = Bundle.main.loadNibNamed("outOrderCell", owner: self, options: nil)?.first as! outOrderCell
-                //if orderRecord.getOrderType() == "Out"
-        
-                    //{
-        
-  
-   
+                if orderRecord.getOrderType() == "Out"
+                    {
                             cell.lblCustName.text =  orderRecord.customer.getCustName()
+                            print(orderRecord.customer.getCustName())
                             cell.lblCustPhone.text = orderRecord.customer.getCustPhone()
                             cell.lblTime.text = "n/a "
                             cell.lblDType.text = orderRecord.getDType()
@@ -246,15 +238,14 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
                             cell.lblDriver.text = orderRecord.driverAssigned.getDriverName()
                             cell.selectionStyle = UITableViewCellSelectionStyle.none
                             cell.pBar.progress = 36.0
-            
-        
                             let lblProgress = UILabel(frame: CGRect(x: 0, y: -50, width: cell.pBar.frame.size.width, height: 25))
                             lblProgress.textAlignment = .center
                             lblProgress.text = "36"
                             cell.pBar.addSubview(lblProgress)
                             cell.selectionStyle = UITableViewCellSelectionStyle.none
     
-                    //}
+                    }
+            
             return cell
         }
 
@@ -266,24 +257,15 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
                 let cell = Bundle.main.loadNibNamed("cellActiveDrivers", owner: self, options: nil)?.first as! cellActiveDrivers
                 cell.lblDriverName.text = activeDrivers[index]
                 cell.selectionStyle = UITableViewCellSelectionStyle.none
-                cell.btnIcon.tag = indexPath.row
+                //cell.btnIcon.tag = indexPath.row
                 //cell.btnIcon.addTarget(self, action: "showDriverDetails", for: UIControlEvents.touchUpInside)
-                cell.btnIcon.addTarget(self, action: Selector(("showDriverDetails")), for: UIControlEvents.touchUpInside)
-        
+                //cell.btnIcon.addTarget(self, action: Selector(("showDriverDetails")), for: UIControlEvents.touchUpInside)
                 return cell
             }
         
     else
     {
-        //return blankCell
-        let cell = Bundle.main.loadNibNamed("cellActiveDrivers", owner: self, options: nil)?.first as! cellActiveDrivers
-        cell.lblDriverName.text = activeDrivers[index]
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
-        cell.btnIcon.tag = indexPath.row
-        //cell.btnIcon.addTarget(self, action: "showDriverDetails", for: UIControlEvents.touchUpInside)
-        cell.btnIcon.addTarget(self, action: Selector(("showDriverDetails")), for: UIControlEvents.touchUpInside)
-        
-        return cell
+        return blankCell
     
     }
 
@@ -305,6 +287,7 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       // return 5
         
         var nOR: Int = 0
 
@@ -351,7 +334,7 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
             return 0
         }
         
-        
+ 
        
     }
     
@@ -359,33 +342,6 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     
     
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    private func hexStringToUIColor (hexString: String) -> UIColor {
-        var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        
-        if (cString.hasPrefix("#")) {
-            cString.remove(at: cString.startIndex)
-        }
-        
-        if ((cString.characters.count) != 6) {
-            return UIColor.gray
-        }
-        
-        var rgbValue:UInt32 = 0
-        Scanner(string: cString).scanHexInt32(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
-    }
 
     
     
@@ -489,23 +445,60 @@ func setActiveDrivers()
     
 private func setOrders (oInfo: [structOrder])
     {
-    
-            let order = Order_Class()
-            for oStructure in oInfo
-                {
+            orders.removeAll()
         
-
+          let order = Order_Class()
+            for oStructure in oInfo
+          //  for idx in 0..<oInfo.count
+            {
+                
+                
                         order.customer.setCustName(value: oStructure.CustName)
+                       // print (order.customer.getCustName())
                         order.customer.setCustPhone ( value: oStructure.CustPhone)
+                        //print (order.customer.getCustPhone())
                         order.setDType(value: oStructure.DType)
                         order.setOrderType(value: oStructure.OrderType)
                         order.setZone(value: oStructure.Zone)
                         order.driverAssigned.setDriverName(value: "John Doe")
+                        //print (order.driverAssigned.getDriverName())
+                
+                        //print (order.getOrderType())
+                
                         orders.append(order)
+                        //print (orders.count)
+             
+            }
+        
 
-                    }
-    
-
-      
     }
+    
+    
+func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+}
+    
+private func hexStringToUIColor (hexString: String) -> UIColor {
+        var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.characters.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+
 }

@@ -15,7 +15,7 @@ class Order_Class
     
  
     private var _orderTime: NSDate?
-    private var _dType: String = ""
+    private var _dType: String = "test"
     private var _zone: Int = 0
     private var _orderType: String = ""
     private var _orderCat: String = ""
@@ -24,7 +24,14 @@ class Order_Class
     public var customer = Customer_Class()
     public var driverAssigned = Driver_Class()
     
+    init ()
+    {
     
+        customer.setCustName(value: "")
+        driverAssigned.setDriverName(value: "")
+    
+    
+    }
     
     
     public func setTotalDistance (value: Double)
@@ -104,6 +111,7 @@ class Order_Class
         
     }
     
+ 
     
   
     
