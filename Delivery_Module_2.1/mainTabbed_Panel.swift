@@ -157,6 +157,7 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
             else if counter <= 20
             {
                 orderInfo.OrderType = "New"
+               
             }
  
             
@@ -190,7 +191,22 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
         btnNewOrders.backgroundColor = hexStringToUIColor(hexString: "ea0e89")
         btnNewOrders.setTitleColor(hexStringToUIColor(hexString: "ffffff"), for: UIControlState.normal)
         
-        btnNewOrders.setTitle("New (\(orders.count))", for: UIControlState.normal)
+        // handle button title
+        var orderCount: Int = 0
+        for eachOrder in orders
+        
+        {
+
+            if eachOrder.getOrderType() == "New" {
+                orderCount += 1
+            }
+
+        }
+       btnNewOrders.setTitle("New (\(orderCount))", for: UIControlState.normal)
+        
+        
+        
+       
 
     }
     
@@ -201,78 +217,87 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
     let index: Int = indexPath.row
      let orderRecord = orders [index]
     //populate table in New tab
-    if tableView == newTabTable {
-       
-      let  cell = Bundle.main.loadNibNamed("newOrderCell", owner: self, options: nil)?.first as! newOrderCell
-      
-        if orderRecord.getOrderType() == "New"
-            {
-           
-                cell.lblCustName.text = orderRecord.customer.getCustName()
-               //print (orders[index].customer.getCustName())
-                cell.lblCustPhone.text = orderRecord.customer.getCustPhone()
-                cell.lblTime.text = "n/a "
-                cell.lblDiningType.text = orderRecord.getDType()
-                cell.lblZone.text = String (orderRecord.getZone())
-                cell.lblDriverAssigned.text = orderRecord.driverAssigned.getDriverName()
-                cell.selectionStyle = UITableViewCellSelectionStyle.none
-               
     
-            }
-       return cell
-      
-    }
+
     
-    //populate table in out tab
-    else if tableView == outTabTable
-        {
-                let  cell = Bundle.main.loadNibNamed("outOrderCell", owner: self, options: nil)?.first as! outOrderCell
-                if orderRecord.getOrderType() == "Out"
+                if tableView == newTabTable {
+                    
+                    let  cell = Bundle.main.loadNibNamed("newOrderCell", owner: self, options: nil)?.first as! newOrderCell
+                    
+                    if orderRecord.getOrderType() == "New"
                     {
-                            cell.lblCustName.text =  orderRecord.customer.getCustName()
-                            print(orderRecord.customer.getCustName())
-                            cell.lblCustPhone.text = orderRecord.customer.getCustPhone()
-                            cell.lblTime.text = "n/a "
-                            cell.lblDType.text = orderRecord.getDType()
-                            cell.lblZone.text = String (orderRecord.getZone())
-                            cell.lblDriver.text = orderRecord.driverAssigned.getDriverName()
-                            cell.selectionStyle = UITableViewCellSelectionStyle.none
-                            cell.pBar.progress = 36.0
-                            let lblProgress = UILabel(frame: CGRect(x: 0, y: -50, width: cell.pBar.frame.size.width, height: 25))
-                            lblProgress.textAlignment = .center
-                            lblProgress.text = "36"
-                            cell.pBar.addSubview(lblProgress)
-                            cell.selectionStyle = UITableViewCellSelectionStyle.none
-    
+                        
+                        cell.lblCustName.text = orderRecord.customer.getCustName()
+                        //print (orders[index].customer.getCustName())
+                        cell.lblCustPhone.text = orderRecord.customer.getCustPhone()
+                        cell.lblTime.text = "n/a "
+                        cell.lblDiningType.text = orderRecord.getDType()
+                        cell.lblZone.text = String (orderRecord.getZone())
+                        cell.lblDriverAssigned.text = orderRecord.driverAssigned.getDriverName()
+                        cell.selectionStyle = UITableViewCellSelectionStyle.none
+                        
+                        
                     }
-            
-            return cell
-        }
-
-
-        
-    // populate active drivers window
-        else if tableView == tblActiveDrivers
-            {
-                let cell = Bundle.main.loadNibNamed("cellActiveDrivers", owner: self, options: nil)?.first as! cellActiveDrivers
-                cell.lblDriverName.text = activeDrivers[index]
-                cell.selectionStyle = UITableViewCellSelectionStyle.none
-                //cell.btnIcon.tag = indexPath.row
-                //cell.btnIcon.addTarget(self, action: "showDriverDetails", for: UIControlEvents.touchUpInside)
-                //cell.btnIcon.addTarget(self, action: Selector(("showDriverDetails")), for: UIControlEvents.touchUpInside)
-                return cell
-            }
-        
-    else
-    {
-        return blankCell
+                    return cell
+                  
+                    
+                }
+                    
+                    //populate table in out tab
+                else if tableView == outTabTable
+                {
+                    let  cell = Bundle.main.loadNibNamed("outOrderCell", owner: self, options: nil)?.first as! outOrderCell
+                    //let  cell = outOrderCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "outOrderCell")
+                    if orderRecord.getOrderType() == "Out"
+                    {
+                        cell.lblCustName.text =  orderRecord.customer.getCustName()
+                        print(orderRecord.customer.getCustName())
+                        cell.lblCustPhone.text = orderRecord.customer.getCustPhone()
+                        cell.lblTime.text = "n/a "
+                        cell.lblDType.text = orderRecord.getDType()
+                        cell.lblZone.text = String (orderRecord.getZone())
+                        cell.lblDriver.text = orderRecord.driverAssigned.getDriverName()
+                        cell.selectionStyle = UITableViewCellSelectionStyle.none
+                
+                        cell.setFillColor(value: "#f4eb42")
+                        cell.setProgress(value: 0.50)
+                        cell.setCell()
+                        cell.selectionStyle = UITableViewCellSelectionStyle.none
+                        
+                    }
+                    
+                    return cell
+                }
+                    
+                    
+                    
+                    // populate active drivers window
+                else if tableView == tblActiveDrivers
+                {
+                    let cell = Bundle.main.loadNibNamed("cellActiveDrivers", owner: self, options: nil)?.first as! cellActiveDrivers
+                    cell.lblDriverName.text = activeDrivers[index]
+                    cell.selectionStyle = UITableViewCellSelectionStyle.none
+                    //cell.btnIcon.tag = indexPath.row
+                    //cell.btnIcon.addTarget(self, action: "showDriverDetails", for: UIControlEvents.touchUpInside)
+                    //cell.btnIcon.addTarget(self, action: Selector(("showDriverDetails")), for: UIControlEvents.touchUpInside)
+                    return cell
+                }
+                    
+             else
+                {
     
+                    return blankCell
     }
 
-   
     
     
-    }
+    
+
+ 
+    
+    
+    
+}
     
     // hide pand with active drivers when called
     private func showDriverDetails(_ sender: UIButton)
@@ -285,30 +310,52 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     }
     
-    
+   
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // return 5
+      /*
+        if tableView.isHidden == false
+        {
         
-        var nOR: Int = 0
+            return 1
+        }
+        else
+        {
+            
+            return 0
+        }
+ */
+       
+        
+        
+        
+        
+        
+        
+        
+        
+         var nOR: Int = 0
+        
 
         if tableView == newTabTable
         {
             nOR = 0
-         for eachOrder in orders
-         {
-            if eachOrder.getOrderType() == "New"
-            {
-                nOR += 1
+            for eachOrder in orders
+                {
+                        if eachOrder.getOrderType() == "New"
+                            {
+                                    nOR += 1
+                                   print (nOR)
               
-            }
+                            }
             
          
-        }
+                }
+              print (nOR)
               return nOR
         
         }
             
-        else if tableView == tblActiveDrivers
+        else if tableView == outTabTable
         {
             nOR = 0
             for eachOrder in orders
@@ -317,11 +364,13 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
                 {
                     
                     nOR += 1
+                    
                   
                 }
                 
             }
-              return nOR
+              //return nOR
+            return 1
         }
         else if tableView == tblActiveDrivers
         {
@@ -331,8 +380,9 @@ class mainTabbed_Panel: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         else
         {
-            return 0
+            return 1
         }
+ 
         
  
        

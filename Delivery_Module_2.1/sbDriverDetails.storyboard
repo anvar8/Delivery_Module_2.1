@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SegoeuiSb.ttf">
+            <string>SegoeUI-SemiBold</string>
+        </array>
+        <array key="segoeui.ttf">
+            <string>SegoeUI</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Driver DetailsVC-->
+        <scene sceneID="FJd-B8-0u9">
+            <objects>
+                <viewController storyboardIdentifier="mainVC" id="V2s-KM-drb" customClass="driverDetailsVC" customModule="Delivery_Module_2_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xfz-HF-jDd"/>
+                        <viewControllerLayoutGuide type="bottom" id="nfJ-T0-I4t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kMp-W8-cwn">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT0-8k-sIX">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Driver Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1A-U0-bVo">
+                                        <rect key="frame" x="52" y="12" width="188" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SegoeUI-SemiBold" family="Segoe UI" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnB-BN-go1">
+                                        <rect key="frame" x="918" y="6" width="51" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="51" id="PRV-Tg-lqY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SegoeUI-SemiBold" family="Segoe UI" pointSize="24"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YnB-BN-go1" secondAttribute="bottom" constant="6" id="C2c-p2-jiQ"/>
+                                    <constraint firstItem="YnB-BN-go1" firstAttribute="top" secondItem="yT0-8k-sIX" secondAttribute="top" constant="6" id="CRU-ib-syh"/>
+                                    <constraint firstAttribute="trailing" secondItem="YnB-BN-go1" secondAttribute="trailing" constant="55" id="Woz-fL-55O"/>
+                                    <constraint firstAttribute="height" constant="55" id="p7Q-cK-Wcl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7X9-DI-X2K">
+                                <rect key="frame" x="52" y="86" width="921" height="640"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aB-Ym-VUx">
+                                        <rect key="frame" x="59" y="540" width="183" height="38"/>
+                                        <color key="backgroundColor" red="0.83529411764705885" green="0.0" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="183" id="cRo-dM-awf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="19"/>
+                                        <state key="normal" title="Print">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4et-vh-b8C">
+                                        <rect key="frame" x="59" y="78" width="812" height="380"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4et-vh-b8C" firstAttribute="top" secondItem="7X9-DI-X2K" secondAttribute="top" constant="78" id="9kG-fi-YkW"/>
+                                    <constraint firstItem="7aB-Ym-VUx" firstAttribute="leading" secondItem="7X9-DI-X2K" secondAttribute="leading" constant="59" id="Nay-Cj-bfS"/>
+                                    <constraint firstItem="4et-vh-b8C" firstAttribute="leading" secondItem="7aB-Ym-VUx" secondAttribute="leading" id="NtF-7z-NEG"/>
+                                    <constraint firstItem="7aB-Ym-VUx" firstAttribute="top" secondItem="4et-vh-b8C" secondAttribute="bottom" constant="82" id="hyd-do-o92"/>
+                                    <constraint firstAttribute="bottom" secondItem="7aB-Ym-VUx" secondAttribute="bottom" constant="62" id="qBS-Bk-chx"/>
+                                    <constraint firstAttribute="trailing" secondItem="4et-vh-b8C" secondAttribute="trailing" constant="50" id="rbF-Qr-7fJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.88235294117647056" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yT0-8k-sIX" firstAttribute="top" secondItem="kMp-W8-cwn" secondAttribute="top" id="51J-lm-ScC"/>
+                            <constraint firstAttribute="trailing" secondItem="yT0-8k-sIX" secondAttribute="trailing" id="FMR-gl-WQB"/>
+                            <constraint firstItem="7X9-DI-X2K" firstAttribute="top" secondItem="yT0-8k-sIX" secondAttribute="bottom" constant="31" id="HyS-gt-sgW"/>
+                            <constraint firstItem="yT0-8k-sIX" firstAttribute="leading" secondItem="kMp-W8-cwn" secondAttribute="leading" id="JLN-EL-zz4"/>
+                            <constraint firstItem="nfJ-T0-I4t" firstAttribute="top" secondItem="7X9-DI-X2K" secondAttribute="bottom" constant="42" id="PtR-aI-Jvf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7X9-DI-X2K" secondAttribute="trailing" constant="31" id="WCa-1u-1zk"/>
+                            <constraint firstItem="7X9-DI-X2K" firstAttribute="leading" secondItem="kMp-W8-cwn" secondAttribute="leadingMargin" constant="32" id="qbO-6O-dlu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tblDriverDetails" destination="4et-vh-b8C" id="EBU-Ua-W11"/>
+                        <outlet property="topView" destination="yT0-8k-sIX" id="dsL-ba-U7Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVn-LC-shW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-192.1875" y="109.375"/>
+        </scene>
+    </scenes>
+</document>

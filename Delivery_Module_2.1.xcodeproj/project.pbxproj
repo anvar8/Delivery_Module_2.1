@@ -18,6 +18,18 @@
 		D058F00B1DCBC58C00CC3EA3 /* DriverPop_UP_MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D058F00A1DCBC58C00CC3EA3 /* DriverPop_UP_MapVC.swift */; };
 		D07E21741DCCE19A00A85E76 /* outOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07E21721DCCE19A00A85E76 /* outOrderCell.swift */; };
 		D07E21751DCCE19A00A85E76 /* outOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D07E21731DCCE19A00A85E76 /* outOrderCell.xib */; };
+		D0831A1A1DD137ED00F1E200 /* segoeui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0831A181DD137ED00F1E200 /* segoeui.ttf */; };
+		D0831A1B1DD137ED00F1E200 /* SegoeuiSb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0831A191DD137ED00F1E200 /* SegoeuiSb.ttf */; };
+		D0831A1E1DD1709E00F1E200 /* sbDirections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0831A1D1DD1709E00F1E200 /* sbDirections.storyboard */; };
+		D0831A211DD176CC00F1E200 /* directionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0831A1F1DD176CC00F1E200 /* directionsCell.swift */; };
+		D0831A221DD176CC00F1E200 /* directionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0831A201DD176CC00F1E200 /* directionsCell.xib */; };
+		D0831A241DD177B300F1E200 /* directionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0831A231DD177B300F1E200 /* directionVC.swift */; };
+		D0B358071DD18E7E001A1BF4 /* directionVC_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B358061DD18E7E001A1BF4 /* directionVC_Main.swift */; };
+		D0B3580D1DD21C23001A1BF4 /* sbDriverDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B3580C1DD21C23001A1BF4 /* sbDriverDetails.storyboard */; };
+		D0B3580F1DD21E53001A1BF4 /* driverDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B3580E1DD21E53001A1BF4 /* driverDetailsVC.swift */; };
+		D0B358121DD220BC001A1BF4 /* driverDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B358101DD220BC001A1BF4 /* driverDetails.swift */; };
+		D0B358131DD220BC001A1BF4 /* driverDetails.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0B358111DD220BC001A1BF4 /* driverDetails.xib */; };
+		D0B358161DD2353D001A1BF4 /* sbCustomerDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B358151DD2353D001A1BF4 /* sbCustomerDetails.storyboard */; };
 		D0C210811DC812A500F68F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C210801DC812A500F68F1D /* AppDelegate.swift */; };
 		D0C210831DC812A500F68F1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C210821DC812A500F68F1D /* ViewController.swift */; };
 		D0C210861DC812A500F68F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C210841DC812A500F68F1D /* Main.storyboard */; };
@@ -70,6 +82,18 @@
 		D058F00A1DCBC58C00CC3EA3 /* DriverPop_UP_MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverPop_UP_MapVC.swift; sourceTree = "<group>"; };
 		D07E21721DCCE19A00A85E76 /* outOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = outOrderCell.swift; sourceTree = "<group>"; };
 		D07E21731DCCE19A00A85E76 /* outOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = outOrderCell.xib; sourceTree = "<group>"; };
+		D0831A181DD137ED00F1E200 /* segoeui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = segoeui.ttf; path = ../../../../../Library/Fonts/segoeui.ttf; sourceTree = "<group>"; };
+		D0831A191DD137ED00F1E200 /* SegoeuiSb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SegoeuiSb.ttf; path = ../../../../../Library/Fonts/SegoeuiSb.ttf; sourceTree = "<group>"; };
+		D0831A1D1DD1709E00F1E200 /* sbDirections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sbDirections.storyboard; sourceTree = "<group>"; };
+		D0831A1F1DD176CC00F1E200 /* directionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = directionsCell.swift; sourceTree = "<group>"; };
+		D0831A201DD176CC00F1E200 /* directionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = directionsCell.xib; sourceTree = "<group>"; };
+		D0831A231DD177B300F1E200 /* directionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = directionVC.swift; sourceTree = "<group>"; };
+		D0B358061DD18E7E001A1BF4 /* directionVC_Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = directionVC_Main.swift; sourceTree = "<group>"; };
+		D0B3580C1DD21C23001A1BF4 /* sbDriverDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sbDriverDetails.storyboard; sourceTree = "<group>"; };
+		D0B3580E1DD21E53001A1BF4 /* driverDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = driverDetailsVC.swift; sourceTree = "<group>"; };
+		D0B358101DD220BC001A1BF4 /* driverDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = driverDetails.swift; sourceTree = "<group>"; };
+		D0B358111DD220BC001A1BF4 /* driverDetails.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = driverDetails.xib; sourceTree = "<group>"; };
+		D0B358151DD2353D001A1BF4 /* sbCustomerDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sbCustomerDetails.storyboard; sourceTree = "<group>"; };
 		D0C2107D1DC812A500F68F1D /* Delivery_Module_2.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Delivery_Module_2.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C210801DC812A500F68F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0C210821DC812A500F68F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,9 +159,74 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D0831A1C1DD1708600F1E200 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				D0CA01CC1DCA4C4D00E12454 /* sbNewTab_Panel.storyboard */,
+				D0831A1D1DD1709E00F1E200 /* sbDirections.storyboard */,
+				D0B3580C1DD21C23001A1BF4 /* sbDriverDetails.storyboard */,
+				D0B358151DD2353D001A1BF4 /* sbCustomerDetails.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		D0B358081DD18E84001A1BF4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0B358171DD235EA001A1BF4 /* customerDetailsView */,
+				D0B358141DD2235C001A1BF4 /* driverDetailsView */,
+				D0B3580B1DD18ED5001A1BF4 /* directionsView */,
+				D0B3580A1DD18EBF001A1BF4 /* popUpMap */,
+				D0B358091DD18E9A001A1BF4 /* orderTabbedPanel */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D0B358091DD18E9A001A1BF4 /* orderTabbedPanel */ = {
+			isa = PBXGroup;
+			children = (
+				D0CA01CF1DCA518900E12454 /* mainTabbed_Panel.swift */,
+			);
+			name = orderTabbedPanel;
+			sourceTree = "<group>";
+		};
+		D0B3580A1DD18EBF001A1BF4 /* popUpMap */ = {
+			isa = PBXGroup;
+			children = (
+				D058F00A1DCBC58C00CC3EA3 /* DriverPop_UP_MapVC.swift */,
+			);
+			name = popUpMap;
+			sourceTree = "<group>";
+		};
+		D0B3580B1DD18ED5001A1BF4 /* directionsView */ = {
+			isa = PBXGroup;
+			children = (
+				D0831A231DD177B300F1E200 /* directionVC.swift */,
+				D0B358061DD18E7E001A1BF4 /* directionVC_Main.swift */,
+			);
+			name = directionsView;
+			sourceTree = "<group>";
+		};
+		D0B358141DD2235C001A1BF4 /* driverDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				D0B3580E1DD21E53001A1BF4 /* driverDetailsVC.swift */,
+			);
+			name = driverDetailsView;
+			sourceTree = "<group>";
+		};
+		D0B358171DD235EA001A1BF4 /* customerDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = customerDetailsView;
+			sourceTree = "<group>";
+		};
 		D0C210741DC812A500F68F1D = {
 			isa = PBXGroup;
 			children = (
+				D0831A181DD137ED00F1E200 /* segoeui.ttf */,
+				D0831A191DD137ED00F1E200 /* SegoeuiSb.ttf */,
 				D0C2107F1DC812A500F68F1D /* Delivery_Module_2.1 */,
 				D0C210971DC812A500F68F1D /* Delivery_Module_2.1Tests */,
 				D0C210A21DC812A500F68F1D /* Delivery_Module_2.1UITests */,
@@ -163,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				D0CA01CE1DCA515A00E12454 /* Tabbled_Panel */,
-				D0E6F6F41DC81F44008F9DA2 /* Classes */,
 				D0E6F6EF1DC81961008F9DA2 /* Custom_Cells */,
 				D0C210801DC812A500F68F1D /* AppDelegate.swift */,
 				D0C210821DC812A500F68F1D /* ViewController.swift */,
@@ -202,11 +290,10 @@
 		D0CA01CE1DCA515A00E12454 /* Tabbled_Panel */ = {
 			isa = PBXGroup;
 			children = (
+				D0B358081DD18E84001A1BF4 /* ViewControllers */,
+				D0831A1C1DD1708600F1E200 /* StoryBoards */,
 				D0CA01DA1DCA885300E12454 /* Classes */,
 				D0CA01D11DCA853700E12454 /* CustomCells */,
-				D0CA01CC1DCA4C4D00E12454 /* sbNewTab_Panel.storyboard */,
-				D0CA01CF1DCA518900E12454 /* mainTabbed_Panel.swift */,
-				D058F00A1DCBC58C00CC3EA3 /* DriverPop_UP_MapVC.swift */,
 			);
 			name = Tabbled_Panel;
 			sourceTree = "<group>";
@@ -220,6 +307,10 @@
 				D058F0001DCB8BA700CC3EA3 /* cellActiveDrivers.xib */,
 				D07E21721DCCE19A00A85E76 /* outOrderCell.swift */,
 				D07E21731DCCE19A00A85E76 /* outOrderCell.xib */,
+				D0831A1F1DD176CC00F1E200 /* directionsCell.swift */,
+				D0831A201DD176CC00F1E200 /* directionsCell.xib */,
+				D0B358101DD220BC001A1BF4 /* driverDetails.swift */,
+				D0B358111DD220BC001A1BF4 /* driverDetails.xib */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -227,6 +318,8 @@
 		D0CA01DA1DCA885300E12454 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D02D6B8A1DC929C900EC43C9 /* Custom_Segue.swift */,
+				D0E6F6F51DC81FFC008F9DA2 /* Gradient_Layer.swift */,
 				D0CA01D81DCA884800E12454 /* Order_Class.swift */,
 				D0CA01DB1DCA8DDF00E12454 /* Customer_Class.swift */,
 				D0CA01DD1DCA934200E12454 /* Driver_Class.swift */,
@@ -242,15 +335,6 @@
 				D0E6F6F11DC8199D008F9DA2 /* dmMainMenuCellTableViewCell.xib */,
 			);
 			name = Custom_Cells;
-			sourceTree = "<group>";
-		};
-		D0E6F6F41DC81F44008F9DA2 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D0E6F6F51DC81FFC008F9DA2 /* Gradient_Layer.swift */,
-				D02D6B8A1DC929C900EC43C9 /* Custom_Segue.swift */,
-			);
-			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,14 +445,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B358161DD2353D001A1BF4 /* sbCustomerDetails.storyboard in Resources */,
+				D0831A1A1DD137ED00F1E200 /* segoeui.ttf in Resources */,
+				D0831A1B1DD137ED00F1E200 /* SegoeuiSb.ttf in Resources */,
 				D0C2108E1DC812A500F68F1D /* LaunchScreen.storyboard in Resources */,
+				D0831A1E1DD1709E00F1E200 /* sbDirections.storyboard in Resources */,
 				D058F0021DCB8BA700CC3EA3 /* cellActiveDrivers.xib in Resources */,
 				D07E21751DCCE19A00A85E76 /* outOrderCell.xib in Resources */,
 				D0C2108B1DC812A500F68F1D /* Assets.xcassets in Resources */,
 				D0CA01D71DCA859A00E12454 /* newOrderCell.xib in Resources */,
 				D02D6B811DC8E12500EC43C9 /* sbTabbedPanel.storyboard in Resources */,
 				D0E6F6F31DC8199D008F9DA2 /* dmMainMenuCellTableViewCell.xib in Resources */,
+				D0B3580D1DD21C23001A1BF4 /* sbDriverDetails.storyboard in Resources */,
+				D0B358131DD220BC001A1BF4 /* driverDetails.xib in Resources */,
 				D0C210861DC812A500F68F1D /* Main.storyboard in Resources */,
+				D0831A221DD176CC00F1E200 /* directionsCell.xib in Resources */,
 				D0CA01CD1DCA4C4D00E12454 /* sbNewTab_Panel.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,13 +487,16 @@
 			files = (
 				D0C210B61DC814CF00F68F1D /* mainTabbedPanel.swift in Sources */,
 				D0E6F6F61DC81FFC008F9DA2 /* Gradient_Layer.swift in Sources */,
+				D0831A241DD177B300F1E200 /* directionVC.swift in Sources */,
 				D0E6F6EE1DC8193C008F9DA2 /* tableMenu.swift in Sources */,
 				D0CA01D01DCA518900E12454 /* mainTabbed_Panel.swift in Sources */,
 				D0C210891DC812A500F68F1D /* Delivery_Module_2_1.xcdatamodeld in Sources */,
+				D0831A211DD176CC00F1E200 /* directionsCell.swift in Sources */,
 				D0C210831DC812A500F68F1D /* ViewController.swift in Sources */,
 				D02D6B831DC8F94100EC43C9 /* dm_Controller.swift in Sources */,
 				D058F0011DCB8BA700CC3EA3 /* cellActiveDrivers.swift in Sources */,
 				D0E6F6F21DC8199D008F9DA2 /* dmMainMenuCellTableViewCell.swift in Sources */,
+				D0B358071DD18E7E001A1BF4 /* directionVC_Main.swift in Sources */,
 				D0C210811DC812A500F68F1D /* AppDelegate.swift in Sources */,
 				D02D6B891DC91FAC00EC43C9 /* transitViewController.swift in Sources */,
 				D0C210B41DC813AE00F68F1D /* SWRevealViewController.m in Sources */,
@@ -410,7 +504,9 @@
 				D07E21741DCCE19A00A85E76 /* outOrderCell.swift in Sources */,
 				D0CA01D61DCA859A00E12454 /* newOrderCell.swift in Sources */,
 				D0CA01DC1DCA8DDF00E12454 /* Customer_Class.swift in Sources */,
+				D0B3580F1DD21E53001A1BF4 /* driverDetailsVC.swift in Sources */,
 				D0CA01DE1DCA934200E12454 /* Driver_Class.swift in Sources */,
+				D0B358121DD220BC001A1BF4 /* driverDetails.swift in Sources */,
 				D058F0091DCBB97600CC3EA3 /* Marker.swift in Sources */,
 				D0CA01D91DCA884800E12454 /* Order_Class.swift in Sources */,
 				D058F00B1DCBC58C00CC3EA3 /* DriverPop_UP_MapVC.swift in Sources */,
